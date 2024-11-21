@@ -16,9 +16,9 @@ public class Tpr505Application {
     @RestController
     public class DemoApplication {
 
-        @GetMapping("/helloworld")
+        @GetMapping("/bonjour")
         public String hello() {
-            return"Hello World!";
+            return"Bonjour tout le monde!";
         }
     }
 
