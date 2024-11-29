@@ -1,24 +1,21 @@
 package com.example.tpr505.model;
 
-import jakarta.persistence.*;
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false, unique = true)
     private String username;
-
-    @Column(nullable = false)
     private String password;
+    private Role role;  // Utilisation de l'Enum Role
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Article> articles;
+    // Constructeur sans arguments
+    public User() {}
 
+    // Getters et Setters
     public Long getId() {
         return id;
     }
@@ -43,11 +40,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Article> getArticles() {
-        return articles;
+    public Role getRole() {   // Getter pour "role"
+        return role;
     }
 
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
+    public void setRole(Role role) {   // Setter pour "role"
+        this.role = role;
     }
 }
