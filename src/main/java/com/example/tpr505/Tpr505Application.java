@@ -11,15 +11,13 @@ public class Tpr505Application {
     public static void main(String[] args) {
         SpringApplication.run(Tpr505Application.class, args);
     }
+}
 
-    @SpringBootApplication
-    @RestController
-    public class DemoApplication {
+@RestController
+class DemoController {
 
-        @GetMapping("/bonjour")
-        public String hello() {
-            return"Bonjour tout le monde!";
-        }
+    @GetMapping("/bonjour")
+    public String hello() {
+        return "Bonjour tout le monde!";
     }
-
 }
